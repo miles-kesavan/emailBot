@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: friendli-email-chat
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run main.py --server.port $PORT
+    envVars:
+      - key: FRIENDLI_API_KEY
+        value: your_friendli_token_here  # Or use from environment
